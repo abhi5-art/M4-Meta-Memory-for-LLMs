@@ -1,0 +1,39 @@
+services:
+  neo4j:
+    image: neo4j:5.23.0-community
+    container_name: m4_neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/StrongPassword123!
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_db_tx__log_rotation_retention__policy=2 files
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p StrongPassword123! 'RETURN 1' || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    volumes:
+      - neo4j_data:/data
+      - ./neo4j_init:/var/lib/neo4j/import
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: m4_app
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - .:/app
+    command: ["demo.py"]
+
+volumes:
+  neo4j_data:

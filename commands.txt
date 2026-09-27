@@ -1,0 +1,8 @@
+source venv/bin/activate  -> To activate virtual environment
+
+docker start m4_neo4j 
+
+streamlit run app.py
+
+MATCH (n) RETURN n -> command to fetch all records in neo4j 
+
