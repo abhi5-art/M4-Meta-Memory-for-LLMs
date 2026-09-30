@@ -216,3 +216,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+### after Evaluation on Lcomo
+
+# ---------------------------------------------------
+# DeepEval Framework Artifacts
+# ---------------------------------------------------
+Evaluation/.deepeval/
+Evaluation/.deepeval-cache.json
+Evaluation/.latest_run_full.json
+Evaluation/.latest_test_run.json
+
+# ---------------------------------------------------
+# NLP Dependency Downloads (NLTK)
+# ---------------------------------------------------
+Evaluation/metrices/nltk_data_secure/
+*.zip
