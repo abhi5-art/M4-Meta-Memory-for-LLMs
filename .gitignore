@@ -225,9 +225,9 @@ __marimo__/
 # DeepEval Framework Artifacts
 # ---------------------------------------------------
 Evaluation/.deepeval/
-Evaluation/.deepeval-cache.json
-Evaluation/.latest_run_full.json
-Evaluation/.latest_test_run.json
+Evaluation/.deepeval/.deepeval-cache.json
+Evaluation/.deepeval/.latest_run_full.json
+Evaluation/.deepeval/.latest_test_run.json
 
 # ---------------------------------------------------
 # NLP Dependency Downloads (NLTK)
