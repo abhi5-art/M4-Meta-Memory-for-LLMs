@@ -6,3 +6,26 @@ streamlit run app.py
 
 MATCH (n) RETURN n -> command to fetch all records in neo4j 
 
+
+# Run evaluation suite via DeepEval runner
+deepeval test run test_m4_pipeline.py
+
+
+To export output scores into a CSV/JSON file to build paper comparison tables for your mentor:
+pytest test_m4_pipeline.py --json-report --json-report-file=m4_evaluation_results.json
+
+
+### testing Dependencies
+pip install mauve-text
+pip install deepeval rouge-score bert-score tiktoken pytest datasets transformers torch
+pip install tabulate deepeval
+
+
+Execution Commands:
+To generate the exact Table I results for your mentor:
+python3 run_eval.py --dataset msc
+python run_eval.py --dataset msc --limit 50
+
+To generate the exact Table III reasoning results for your mentor:
+python3 run_eval.py --dataset locomo
+python run_eval.py --dataset locomo --limit 50

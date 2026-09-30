@@ -14,7 +14,7 @@ class LLMClientException(Exception):
 class OllamaClient:
     def __init__(self, config: AppConfig):
         self.config = config
-        self.http_client = httpx.Client(timeout=120.0)
+        self.http_client = httpx.Client(timeout=300.0)
 
     def get_embedding(self, text: str) -> List[float]:
         """Calls native Ollama /api/embeddings endpoint."""

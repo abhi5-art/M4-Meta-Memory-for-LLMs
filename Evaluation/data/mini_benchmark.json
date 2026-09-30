@@ -1,0 +1,26 @@
+[
+    {
+        "id": "msc_conflict_01",
+        "task": "Knowledge Update (Calibrate)",
+        "query": "What is the user's preferred morning drink?",
+        "raw_memory": "Session 1: User stated they drink 3 cups of coffee every morning. Session 3: User mentioned they got acid reflux and completely switched from coffee to green tea.",
+        "compressed_memory": "User's morning drink: green tea (switched from coffee due to acid reflux).",
+        "expected_output": "The user prefers green tea in the morning, having switched from coffee."
+    },
+    {
+        "id": "locomo_temporal_01",
+        "task": "Temporal Reasoning",
+        "query": "Did the user adopt the dog before or after moving to Pune?",
+        "raw_memory": "Session 1: User moved to Pune in Jan 2023. Session 2: User adopted a golden retriever named Max in March 2023.",
+        "compressed_memory": "Jan 2023: Moved to Pune -> March 2023: Adopted dog Max.",
+        "expected_output": "The user adopted the dog after moving to Pune."
+    },  
+    {
+        "id": "locomo_multihop_01",
+        "task": "Multi-Hop Reasoning",
+        "query": "What is the name of the company where the user's brother works?",
+        "raw_memory": "Session 2: User's brother is named Rahul. Session 4: Rahul just got a new job at Infosys.",
+        "compressed_memory": "User's brother: Rahul. Rahul's workplace: Infosys.",
+        "expected_output": "The user's brother, Rahul, works at Infosys."
+    }
+]
